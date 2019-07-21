@@ -40,14 +40,27 @@ It's None
 
 9.How can you force a variable in a function to refer to the global variable?
 
-globa
+global
+
 10.What is the data type of None?
 
+It means it holds no value.
+
 11.What does the import areallyourpetsnamederic statement do? 
+
+it imports all the functions from areallyourpetsnamederic library
 
 12.If you had a function named bacon() in a module named spam, how
 would you call it after importing spam?
 
+import spam
+
+bacon()
+
 13.How can you prevent a program from crashing when it gets an error?
 
+with the try and except clause.
+
 14.What goes in the try clause? What goes in the except clause?
+
+in the try clause you put in the code to execute, if that one causes an error. itll execute the code in the except clause.
