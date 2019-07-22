@@ -1,40 +1,85 @@
 1.What is []?
 
+An empty list.
+
 2.How would you assign the value 'hello' as the third value in a list stored 
 in a variable named spam? (Assume spam contains [2, 4, 6, 8, 10].)
+
+spam.append('hello')
 
 For the following three questions, let’s say spam contains the list 
 ['a', 'b', 'c', 'd'].
 
 3.What does spam[int(int('3' * 2) / 11)] evaluate to?
 
+It evaluates to 'd'
+
 4.What does spam[-1] evaluate to?
 
+It also evaluates to 'd', because its using -1 to indicate the last value on the list.
+
 5.What does spam[:2] evaluate to?
+
+it evaluates to:
+['a', 'b']
+
+printing the first value up to the second one.
 
 For the following three questions, 
 let’s say bacon contains the list  [3.14, 'cat', 11, 'cat', True].
 
 6.What does bacon.index('cat') evaluate to?
 
+It prints out the index at which the string 'cat' can be found, which would be 2
+
 7.What does bacon.append(99) make the list value in bacon look like?
+
+[3.14, 'cat', 11, 'cat', True, 99]
+
+It simply adds that value to the end of the list
 
 8.What does bacon.remove('cat') make the list value in bacon look like?
 
+[3.14, 11, 'cat', True]
+
+When remove is called on a list and the item can be found more than once, the first item is the one thats removed.
+
 9.What are the operators for list concatenation and list replication?
+
+
 
 10.What is the difference between the append() and insert() list methods?
 
+In append you add the value to the end of the list.
+While in insert, you specify the index along with the value.
+
 11.What are two ways to remove values from a list?
+
+You can use the 'del' keyword where you specify the index, or you can use the remove method where you can specify the value.
 
 12.Name a few ways that list values are similar to string values.
 
+They are both mutable.
+It could be said that a string is merely a list of letters joined together.
+They can be indexed and accesed.
 13.What is the difference between lists and tuples?
+
+List can be modified and changed while tuples cannot.
 
 14.How do you type the tuple value that has just the integer value 42 in it?
 
+var = (42, )
+
+We add the comma at the end to indicate its a tuple.
+
 15.How can you get the tuple form of a list value? How can you get the list form of a tuple value?
+
+You can use the list() and tuple() functions.
 
 16.Variables that “contain” list values don’t actually contain lists directly. What do they contain instead?
 
+They contain references, which means if a value is removed or added, the same thing happens to the orignal.
+
 17.What is the difference between copy.copy() and copy.deepcopy()?
+
+copy.copy() will copy the list to a variable and copy.deepcopy() will copy the inner list as well.

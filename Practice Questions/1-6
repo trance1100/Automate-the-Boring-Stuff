@@ -1,0 +1,73 @@
+Q:1. What are escape characters?
+
+They are often characters that are hard to put in a string, for exmaple a new line, or a single quote.
+These mostly consist of a backslash.
+
+Q:2. What do the \n and \t escape characters represent?
+
+The \n is used for a new line and \t is used to indicate a tab
+
+Q:3. How can you put a \ backslash character in a string?
+
+We can just call \\ twice, indicating we want to print the backslash character.
+
+Q:4. The string value "Howl's Moving Castle" is a valid string. Why isn’t it a problem that the single quote character in the word Howl's isn’t escaped?
+
+Typically in python a string ends when the starting single quote or double quote is met.
+In this case the string starts in double quotes and so it doesn't cause a problem when a single quote is used.
+If a single quote were used you could just escape the single quote and it wont cause any problems.
+
+Q:5. If you don’t want to put \n in your string, how can you write a string with newlines in it?
+
+We can call end in the string.
+
+Q:6. What do the following expressions evaluate to?
+o
+    'Hello world!'[1]
+
+    Evalues to:
+    'e'
+
+    'Hello world!'[0:5]
+    Evalues to:
+    'Hello'
+
+    'Hello world!'[:5]
+    Evalues to:
+    'Hello"
+
+    'Hello world!'[3:]
+    Evalues to:
+    'lo world!'
+
+Q:7. What do the following expressions evaluate to?
+
+    'Hello'.upper()
+    Evalues to:
+    'HELLO'
+
+    'Hello'.upper().isupper()
+    Evalues to:
+    True
+
+    'Hello'.upper().lower()
+    Evalues to:
+    False
+
+Q:8. What do the following expressions evaluate to?
+
+    'Remember, remember, the fifth of November.'.split()
+
+    '-'.join('There can be only one.'.split())
+
+    Evalues to:
+
+    ['Remember,', 'remember,' 'the', 'fifth', 'of', 'November.']
+
+Q:9. What string methods can you use to right-justify, left-justify, and center a string?
+
+rjust(), ljust(), center()
+
+Q:10. How can you trim whitespace characters from the beginning or end of a string?
+
+from the strip(), rstrip(), lstrip() methods

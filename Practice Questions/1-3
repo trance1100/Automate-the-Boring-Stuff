@@ -27,8 +27,7 @@ There is only one global scope and multiple local scopes, depending on functions
 They're brutally murdered. 
 I mean, they dissapear.
 From a lower level perspective, they pop from the stack or wahetver.
-
-7.What is a return value? Can a return value be part of an expression?
+za return value? Can a return value be part of an expression?
 
 Is used to return a value from a function.
 Return values can be a part of an expression, which will return the result of that expression.
