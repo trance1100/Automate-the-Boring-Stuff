@@ -60,13 +60,30 @@ by specifying re.ignorecase, it ignores capitalization in strings.
 
 Q:15. What does the . character normally match? What does it match if re.DOTALL is passed as the second argument to re.compile()?
 
+The . matches any character, except newline characters.
+The re.DOTALL matches everything including the newline characters.
+
 Q:16. What is the difference between these two: .* and .*?
+
+.* matches with any character except newlines; the * character means zero or more of the preceding characters.
+
+The .*? is the non greedy mode, it'll match the shortest string possible string.
 
 Q:17. What is the character class syntax to match all numbers and lowercase letters?
 
+re.IGNORECASE will ignore capitalization.
+
 Q:18. If numRegex = re.compile(r'\d+'), what will numRegex.sub('X', '12 drummers, 11 pipers, five rings, 3 hens') return?
 
+It will substitude anything matching the regex expression with the expression passed to it.
+The output would be:
+'X drummers, X pipers, five rings, X hens'
+
 Q:19. What does passing re.VERBOSE as the second argument to re.compile() allow you to do?
+
+It allows the user to spread out the regex expression and make it easier to manage it. 
+Breaking it into smaller parts.
+It literally tells python to ignore whitespace and comments inside the regular expression string.
 
 Q:20. How would you write a regex that matches a number with commas for every three digits? It must match the following:
 
@@ -75,6 +92,10 @@ Q:20. How would you write a regex that matches a number with commas for every th
     '1,234'
 
     '6,368,745'
+
+re.compile(r'''(
+    \d\d\d(,)*
+))
 
 but not the following:
 
@@ -100,6 +121,10 @@ but not the following:
 
     'Satoshi nakamoto' (where Nakamoto is not capitalized)
 
+re.compile(r'''(
+    .\d[^.-/\|]\s
+    Nakamoto$  
+))
 Q:22. How would you write a regex that matches a sentence where the first word is either Alice, Bob, or Carol; the second word is either eats, pets, or throws; the third word is apples, cats, or baseballs; and the sentence ends with a period? This regex should be case-insensitive. It must match the following:
 
     'Alice eats apples.'
@@ -120,3 +145,9 @@ but not the following:
 
     'Carol eats 7 cats.'
 
+re.compile(r'''(
+    ^[Alice|Bob|Carol]
+    [eats|pets|throws]
+    [apple|cats|baseballs]
+    /.$
+), re.IGNORECASE)
