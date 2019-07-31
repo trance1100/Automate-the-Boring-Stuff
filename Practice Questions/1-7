@@ -93,15 +93,17 @@ Q:20. How would you write a regex that matches a number with commas for every th
 
     '6,368,745'
 
-re.compile(r'''(
-    \d\d\d(,)*
-))
-
 but not the following:
 
     '12,34,567' (which has only two digits between the commas)
 
     '1234' (which lacks commas)
+
+The solution that I came up with is the following:
+re.compile(r'''
+    [\d{,3}(,)]+''', re.VERBOSE)
+
+It's not perfect. It matches if the number has a comma in between the numbers, but it doesn't check if the numbers in between are actually 3 digits.
 
 Q:21. How would you write a regex that matches the full name of someone whose last name is Nakamoto? You can assume that the first name that comes before it will always be one word that begins with a capital letter. The regex must match the following:
 
@@ -121,10 +123,14 @@ but not the following:
 
     'Satoshi nakamoto' (where Nakamoto is not capitalized)
 
-re.compile(r'''(
-    .\d[^.-/\|]\s
-    Nakamoto$  
-))
+I would use this regex expression:
+re.compile(r'''
+    [A-Z][a-z]+\s
+    Nakamoto$''', re.VERBOSE)
+
+It checks that the first letter is capital,followed by the rest of the letters.
+And it will only match if Nakamoto is capitalized.
+
 Q:22. How would you write a regex that matches a sentence where the first word is either Alice, Bob, or Carol; the second word is either eats, pets, or throws; the third word is apples, cats, or baseballs; and the sentence ends with a period? This regex should be case-insensitive. It must match the following:
 
     'Alice eats apples.'
@@ -145,9 +151,8 @@ but not the following:
 
     'Carol eats 7 cats.'
 
-re.compile(r'''(
-    ^[Alice|Bob|Carol]
-    [eats|pets|throws]
-    [apple|cats|baseballs]
-    /.$
-), re.IGNORECASE)
+This is the regex expression that I came up with
+re.compile(r'''
+    ^(Alice|Bob|Carol)\s        # Matches with Alice, Bob, or Carol - Must start with these names
+    (eats|pets|throws)\s        # matches with eats pets or throws
+    (apples|cats|baseballs)\.$''', re.VERBOSE|re.I) # matches with words and ends with a .

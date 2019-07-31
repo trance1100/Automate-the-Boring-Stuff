@@ -1,17 +1,13 @@
 import re
 
-word = re.compile(r'''(
-    ['Alice'|'Bob'|'Carol']
-    # [eats|pets|throws]\s
-    # [apple|cats|baseballs]
-    # /.$
-    )''', re.IGNORECASE|re.VERBOSE)
+word = re.compile(r'''
+    [\d{3}]+(,)+''', re.VERBOSE)
 
-test1 = 'Alice eats apples.'
-test2 = 'Carol throws baseballs.'
+test1 = '123,123,123'
+test2 ='12,12,12'
 
-obj1 = word.findall(test1)
-obj2 = word.findall(test2)
+obj1 = word.search(test1)
+obj2 = word.search(test2)
 
-print(obj1)
-print(obj2)
+print(obj1.group(0))
+print(obj2.group(0))
