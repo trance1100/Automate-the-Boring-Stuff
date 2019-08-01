@@ -5,13 +5,14 @@
 import re
 
 def fakestrip(text, argument=None):
-    if argument == None:
-        subsText = re.compile(r'^\s+\s')
-        print(subsText.sub('', text))
+    if argument == None:                    # If no arguments are provided
+        subsText = re.compile(r'^\s+\s')    # We create a regex expression
+        print(subsText.sub('', text))       # strip it of spaces
     else:
-        subsText = re.compile(r'[re.escape(argument)]')
-        print(subsText.sub('', text))
-
+        subsText = re.compile(argument)   # else. make a regex expression
+        print("removing: " + argument)
+        print(subsText.sub('', text))                       # replaces those characters passed to it in the argument with 
+            
 text = "     delete all whitespaces     "
 text2 = "Im happy"
 
